@@ -43,17 +43,25 @@ export default {
       numberFirst: '',
       numberSecornd: '',
       show: '',
-      mode: ''
+      mode: {
+        add: 0
+      },
+      swap: ''
     }
   },
   methods: {
     addNum (num) {
-      if (this.mode === '+') {
+      if (this.mode.add === 1) {
+        this.numberSecornd = this.numberSecornd + num.toString()
+        this.show = this.numberSecornd
+      } else if (this.mode.add >= 2) {
+        this.numberSecornd = ''
         this.numberSecornd = this.numberSecornd + num.toString()
         this.show = this.numberSecornd
       } else {
         this.numberFirst = this.numberFirst + num.toString()
         this.show = this.numberFirst
+        this.swap = this.numberFirst
       }
     },
     clear () {
@@ -62,12 +70,19 @@ export default {
       this.numberSecornd = ''
     },
     add () {
-      this.mode = '+'
+      this.mode.add += 1
       this.show = ''
+      if (this.mode.add >= 2) {
+        this.show = parseInt(this.swap) + parseInt(this.numberSecornd)
+        this.swap = this.show
+      }
+      console.log('mode ', this.mode)
+      console.log('swap', this.swap)
+      console.log('show', this.show)
     },
     total () {
-      if (this.mode === '+') {
-        this.show = parseInt(this.numberFirst) + parseInt(this.numberSecornd)
+      if (this.mode.add >= 1) {
+        this.show = parseInt(this.swap) + parseInt(this.numberSecornd)
       }
     }
   },
@@ -76,3 +91,4 @@ export default {
   }
 }
 </script>
+y
