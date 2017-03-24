@@ -68,6 +68,8 @@ export default {
       this.show = '0'
       this.numberFirst = ''
       this.numberSecornd = ''
+      this.swap = ''
+      this.mode.add = 0
     },
     add () {
       this.mode.add += 1

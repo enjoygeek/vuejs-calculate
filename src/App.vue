@@ -35,7 +35,7 @@ body {
   padding-right: 15px;
   padding-top: 10px;
   text-align: right;
-  margin-right: 6px;
+  /*margin-right: 6px;*/
   font-size: 2.5rem;
   overflow-x: auto;
   transition: all .2s ease-in-out;
@@ -49,7 +49,9 @@ body {
 
 .buttons {}
 
-.operators {}
+.operators {
+  padding: 0px 0px 0px 20px;
+}
 
 .operators div {
   display: inline-block;
@@ -77,6 +79,7 @@ body {
 
 .leftPanel {
   display: inline-block;
+  padding: 0px 0px 0px 20px;
 }
 
 .numbers div {
